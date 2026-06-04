@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1" />
+  <meta name="theme-color" content="#0a0e1a" />
+  <meta name="description" content="AI BOS — Your AI Business Operating System & command center." />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+  <title>AI BOS — AI Business Operating System</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Notification drawer -->
+  <div class="overlay" id="overlay"></div>
+  <div class="drawer" id="notifDrawer">
+    <div class="drawer-head">
+      <h3>🔔 Notifications</h3>
+      <button class="btn btn-sm btn-ghost" id="markReadBtn">Mark all read</button>
+    </div>
+    <div class="drawer-body" id="notifBody"></div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-back" id="modalBack">
+    <div class="modal" id="modalBox"></div>
+  </div>
+
+  <!-- Toasts -->
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/voice.js"></script>
+  <script src="/js/views.js"></script>
+  <script src="/js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+    }
+  </script>
+</body>
+</html>

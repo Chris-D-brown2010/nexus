@@ -1,0 +1,15 @@
+# Dependencies (the host installs these automatically)
+node_modules/
+
+# Local database & logs (the host creates its own)
+data/
+*.db
+*.db-shm
+*.db-wal
+*.log
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,19 @@
+# Render.com Blueprint — deploys AI BOS with free HTTPS.
+# After connecting your repo, Render reads this automatically.
+services:
+  - type: web
+    name: ai-bos
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true        # Render makes a strong secret for you
+      - key: DATA_DIR
+        value: /var/data           # persistent disk mount path
+    disk:
+      name: aibos-data
+      mountPath: /var/data
+      sizeGB: 1
